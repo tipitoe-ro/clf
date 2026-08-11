@@ -31,7 +31,7 @@ $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011'
 .clf-testimonials{display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:1px;background:#c8bdab}
 .clf-testimonials article{background:#eee9df;padding:27px 25px 31px;min-height:300px;display:flex;flex-direction:column}
 .clf-testimonials article>span{font:58px "Playfair Display";color:var(--rust);line-height:.65;margin-bottom:27px}
-.clf-testimonials p{font:italic 17px/1.55 "Playfair Display";color:#343b42;margin-bottom:28px}
+.clf-testimonials p{font:italic 19px/1.55 "Playfair Display";color:#343b42;margin-bottom:28px}
 .clf-testimonials b{font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-top:auto}
 .clf-testimonials small{font:10px "DM Mono";color:#78756e;margin-top:7px}
 .clf-directory{padding:130px clamp(22px,11vw,170px);background:#d8cbb5;display:grid;grid-template-columns:1fr 2.1fr;gap:6vw}
@@ -42,7 +42,7 @@ $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011'
 .clf-portal{padding:120px clamp(22px,11vw,170px);background:var(--ink);color:#eee9df;display:grid;grid-template-columns:1fr 2.1fr;gap:6vw}
 .clf-portal-band{border:1px solid #526070;padding:42px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .clf-coming{display:inline-flex;align-items:center;gap:7px;color:#e0a187;border:1px solid #77574d;padding:7px 10px;font:10px "DM Mono";text-transform:uppercase;letter-spacing:.1em}
-.clf-portal h2{font-size:clamp(36px,4vw,58px);line-height:.92;letter-spacing:-.07em;margin:28px 0 23px}.clf-portal p{font-size:14px;line-height:1.7;color:#b5b9b5}
+.clf-portal h2{font-size:clamp(36px,4vw,58px);line-height:.92;letter-spacing:-.07em;margin:28px 0 23px}.clf-portal p{font-size:16px;line-height:1.7;color:#b5b9b5}
 .clf-features{display:flex;flex-direction:column;gap:15px;margin-top:28px}.clf-features div{font-size:13px;color:#d0d0c8;display:flex;gap:11px;align-items:flex-start}.clf-features svg{color:#d18a72;flex-shrink:0}
 .clf-portal-actions{padding-top:47px}.clf-portal-actions .clf-button{margin:26px 0 12px;text-decoration:none}.clf-portal-login{display:flex;align-items:center;gap:8px;color:#d8d6cc!important;font-size:12px;padding:11px 0}.clf-portal-login:hover{color:#d5a18f!important}.clf-portal-actions>small{display:block;font:10px/1.6 "DM Mono";color:#8e9897;margin-top:22px}
 @media(min-width:1500px){.clf-alumnihero{max-height:1000px}.clf-alumnihero-inner{max-width:58vw}.clf-alumnihero h1{font-size:clamp(55px,8.5vw,175px)}}

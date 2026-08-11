@@ -46,7 +46,7 @@ $gift_amounts = array( '$50', '$100', '$250', '$500' );
   .clf-give-card { background: #f4f0e8; border: 1px solid #c8bdab; }
   .clf-give-card-head { padding: 27px 30px 24px; border-bottom: 1px solid #c8bdab; }
   .clf-give-card-head h2 { font-size: 25px; letter-spacing: -.04em; margin: 0 0 9px; }
-  .clf-give-card-head p, .clf-give-alt p { color: #62645f; font-size: 13px; line-height: 1.65; }
+  .clf-give-card-head p, .clf-give-alt p { color: #62645f; font-size: 15px; line-height: 1.65; }
   .clf-give-card-body { padding: 30px; }
   .clf-give-toggle { display: flex; border: 1px solid #bdb4a4; margin-bottom: 23px; }
   .clf-give-toggle button { flex: 1; padding: 13px 8px; color: #666960; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
@@ -69,7 +69,7 @@ $gift_amounts = array( '$50', '$100', '$250', '$500' );
   .clf-funding-card { min-height: 210px; padding: 24px 22px; border-right: 1px solid #c8bdab; border-bottom: 1px solid #c8bdab; position: relative; }
   .clf-funding-card span { font: 10px "DM Mono"; color: var(--rust); }
   .clf-funding-card h3 { font-size: 18px; margin: 30px 0 11px; letter-spacing: -.03em; }
-  .clf-funding-card p { max-width: 245px; color: #62645f; font-size: 12px; line-height: 1.6; }
+  .clf-funding-card p { max-width: 275px; color: #62645f; font-size: 14px; line-height: 1.6; }
   .clf-funding-card:after { content: "\2197"; position: absolute; right: 20px; bottom: 19px; color: var(--rust); font-size: 18px; }
   .clf-impact { background: var(--ink); color: var(--paper); border-bottom: 0; }
   .clf-impact .clf-give-label { color: #d4a492; }
@@ -79,7 +79,7 @@ $gift_amounts = array( '$50', '$100', '$250', '$500' );
   .clf-impact-cell { padding: 25px 20px 28px; min-height: 180px; border-right: 1px solid #485160; }
   .clf-impact-cell:last-child { border: 0; }
   .clf-impact-cell strong { display: block; color: #d4a492; font: 25px "DM Mono"; margin-bottom: 20px; }
-  .clf-impact-cell p { color: #b8bcb7; font-size: 12px; line-height: 1.6; }
+  .clf-impact-cell p { color: #b8bcb7; font-size: 14px; line-height: 1.6; }
   .clf-give-success { color: #e7c5b6; font: 11px "DM Mono"; display: flex; gap: 8px; align-items: center; margin-top: 15px; }
   @media(min-width:1500px) {
     .clf-give-hero-inner { max-width: 60vw; }

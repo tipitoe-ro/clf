@@ -25,7 +25,7 @@ if ( have_posts() ) {
   .ba-kicker { color:#d4a492; font:11px "DM Mono"; letter-spacing:.13em; text-transform:uppercase; }
   .ba-hero h1 { font-size:clamp(65px,10vw,142px); line-height:.84; letter-spacing:-.08em; margin:33px 0 30px; max-width:800px; }
   .ba-hero h1 em { font-family:"Playfair Display",serif; color:#d6a18f; font-weight:600; }
-  .ba-hero p { max-width:535px; color:#c6c8c3; font-size:16px; line-height:1.7; }
+  .ba-hero p { max-width:560px; color:#c6c8c3; font-size:17px; line-height:1.7; }
   .ba-layout { display:grid; grid-template-columns:220px minmax(0,690px); gap:clamp(34px,6vw,96px); padding:clamp(65px,9vw,120px) clamp(22px,11vw,170px); align-items:start; }
   .ba-sidebar { position:sticky; top:28px; }
   .ba-stepnav { border-top:1px solid #c8bdab; }
@@ -66,7 +66,7 @@ if ( have_posts() ) {
   .ba-conditional { display:none; margin-top:12px; }
   .ba-conditional.visible { display:block; }
   .ba-commitment,.ba-info { background:#e1d4bf; padding:21px 22px; margin:20px 0 30px; }
-  .ba-commitment p,.ba-info p { color:#5f625c; font-size:13px; line-height:1.7; margin-bottom:16px; }
+  .ba-commitment p,.ba-info p { color:#5f625c; font-size:15px; line-height:1.7; margin-bottom:16px; }
   .ba-check { display:flex; gap:10px; color:var(--ink); font-size:12px; line-height:1.5; cursor:pointer; }
   .ba-check input { accent-color:var(--rust); margin-top:2px; }
   .ba-info { display:flex; flex-direction:column; gap:10px; }

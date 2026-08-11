@@ -73,13 +73,13 @@ $exp_numbers = array(
 .clf-experience-page .clf-exp-head{display:flex;justify-content:space-between;align-items:end;margin:65px 0 57px}
 .clf-experience-page .clf-exp-head h2,.clf-experience-page .clf-exp-numbers h2{font-size:clamp(54px,7vw,96px);line-height:.9;letter-spacing:-.08em;margin:0}
 .clf-experience-page .clf-exp-head h2 em,.clf-experience-page .clf-exp-numbers h2 em{font-family:"Playfair Display",serif;color:var(--rust)}
-.clf-experience-page .clf-exp-head p{max-width:310px;line-height:1.7;font-size:14px;color:#5b5c56}
+.clf-experience-page .clf-exp-head p{max-width:340px;line-height:1.7;font-size:16px;color:#5b5c56}
 .clf-experience-page .clf-exp-list{display:flex;flex-direction:column;gap:1px;background:#bbae99}
 .clf-experience-page .clf-exp-row{display:grid;grid-template-columns:76px 1fr;background:var(--paper);min-height:190px}
 .clf-experience-page .clf-exp-icon{padding:27px 0;text-align:center;color:var(--rust);border-right:1px solid #c8bdab}
 .clf-experience-page .clf-exp-body{padding:25px 30px}
 .clf-experience-page .clf-exp-body h3{font-size:22px;margin:0 0 12px}
-.clf-experience-page .clf-exp-body p{font-size:14px;line-height:1.65;color:#62645f;max-width:720px}
+.clf-experience-page .clf-exp-body p{font-size:16px;line-height:1.65;color:#62645f;max-width:720px}
 .clf-experience-page .clf-exp-meta{font:10px "DM Mono";letter-spacing:.08em;text-transform:uppercase;color:var(--rust);margin-top:18px}
 .clf-experience-page .clf-exp-retreats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px;max-width:650px}
 .clf-experience-page .clf-exp-pill{padding:13px;background:#e4dccd}
