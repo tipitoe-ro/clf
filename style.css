@@ -3,7 +3,7 @@ Theme Name: CLF — Charlotte Leadership Forum
 Theme URI: https://charlotteforum.org
 Author: Charlotte Leadership Forum
 Description: Custom WordPress theme for the Charlotte Leadership Forum — "Bold Conviction" design. Deep navy, parchment, and rust palette with oversized editorial typography.
-Version: 2.0.3
+Version: 2.0.4
 License: GNU General Public License v2 or later
 Text Domain: clf
 GitHub Theme URI: tipitoe-ro/clf
@@ -49,7 +49,7 @@ Primary Branch: main
 .clf-heroinner{position:relative;margin-left:clamp(22px,11vw,170px);max-width:720px;padding-top:80px}
 .clf-kicker,.clf-sectiontag{font:11px "DM Mono";letter-spacing:.13em;text-transform:uppercase;color:#d4a492}
 .clf-kicker span{color:#d8d4ca;margin-left:13px}
-.clf-hero h1{font-size:clamp(64px,10.5vw,158px);line-height:.86;letter-spacing:-.075em;margin:29px 0 35px;font-weight:700}
+.clf-hero h1{font-size:clamp(64px,10.5vw,160px);line-height:.86;letter-spacing:-.075em;margin:29px 0 35px;font-weight:600}
 .clf-hero h1 em,.clf-mission h2 em,.clf-experience h2 em,.clf-apply h2 em,.clf h2 em{font-family:"Playfair Display",serif;font-weight:600;letter-spacing:-.06em;color:#d6a18f;font-style:italic}
 .clf-herobody{font-size:16px;line-height:1.7;max-width:390px;color:#d9d9d3}
 .clf-actions{display:flex;align-items:center;gap:27px;margin-top:34px}
@@ -175,7 +175,7 @@ Primary Branch: main
   .clf-navcta,.clf-navlinks a.nav-cta{padding:14px 20px}
   .clf-kicker,.clf-sectiontag{font-size:13px}
   .clf-kicker span{margin-left:15px}
-  .clf-hero h1{font-size:clamp(64px,10.5vw,200px)}
+  .clf-hero h1{font-size:clamp(64px,10.5vw,160px)}
   .clf-heroinner{max-width:58vw}
   .clf-herobody{font-size:19px;max-width:500px}
   .clf-button,.clf-applybtn{font-size:13px;padding:17px 22px}
