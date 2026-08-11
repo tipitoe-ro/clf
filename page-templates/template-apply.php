@@ -133,6 +133,11 @@ $clf_use_gf = $clf_gf_id && function_exists( 'gravity_form' );
   .ba-form .gform_wrapper .gfield_error input, .ba-form .gform_wrapper .gfield_error textarea { border-color:var(--rust); }
   .ba-form .gform_wrapper .gfield_error .gfield_label { color:var(--rust); }
   .ba-form .gform_wrapper .gfield_validation_message, .ba-form .gform_wrapper .validation_message { background:transparent; border:0; color:var(--rust); font-size:11px; padding:6px 0 0; }
+  .ba-form .gform_wrapper .form_saved_message, .ba-form .gform_wrapper .form_saved_message_sent { background:#e1d4bf; border:0; border-radius:0; color:var(--ink); font-size:14px; line-height:1.7; padding:28px 30px; text-align:left; }
+  .ba-form .gform_wrapper .form_saved_message form { margin-top:18px; }
+  .ba-form .gform_wrapper .form_saved_message input[type=email], .ba-form .gform_wrapper .form_saved_message input[type=text] { max-width:340px; margin-bottom:12px; }
+  .ba-form .gform_wrapper .form_saved_message input[type=submit], .ba-form .gform_wrapper .form_saved_message button { background:var(--rust)!important; color:#fff!important; border:0; border-radius:0; padding:14px 17px; font:11px Manrope,sans-serif; font-weight:700; letter-spacing:.09em; text-transform:uppercase; cursor:pointer; }
+  .ba-form .gform_wrapper .resume_form_link_wrapper { word-break:break-all; }
   @media(max-width:720px){ .ba-form .gform_wrapper .gf_page_steps { flex-wrap:wrap; } }
   @media(min-width:1500px){ .ba-hero h1{font-size:clamp(65px,10vw,190px);max-width:60vw} }
   @media(max-width:720px){ .ba-hero:after{display:none}.ba-hero{padding:65px 22px 68px}.ba-hero h1{font-size:75px}.ba-layout{display:block;padding:62px 22px}.ba-sidebar{position:static;margin-bottom:55px}.ba-stepnav{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.ba-step{display:block;padding:10px 0;border-bottom:2px solid #c8bdab}.ba-step.active{border-color:var(--rust)}.ba-stepnum{margin-bottom:8px}.ba-steplabel{font-size:10px;line-height:1.2}.ba-savenote{max-width:310px}.ba-row{grid-template-columns:1fr}.ba-stepheading{font-size:25px}.ba-success h2{font-size:59px} }
@@ -164,7 +169,8 @@ $clf_use_gf = $clf_gf_id && function_exists( 'gravity_form' );
 
   <section class="ba-form clf-reveal">
     <?php if ( $clf_use_gf ) : ?>
-      <?php gravity_form( $clf_gf_id, false, false, false, null, true ); ?>
+      <?php /* ajax=false: AJAX embedding breaks GF's Save & Continue screen */ ?>
+      <?php gravity_form( $clf_gf_id, false, false, false, null, false ); ?>
     <?php else : ?>
     <div class="ba-progress"><span id="progressFill" style="width:20%;"></span></div>
 
