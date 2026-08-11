@@ -2455,6 +2455,28 @@
     "subject": "{Husband — first name:2} & {Wife — first name:9} listed you as a reference for the Charlotte Leadership Forum",
     "message": "Hello,<br><br>{Husband — first name:2} and {Wife — first name:9} have applied to the Charlotte Leadership Forum, an 18-month leadership development experience for young married couples, and listed you as a reference (wife — reference 2 (peer)).<br><br>Someone from CLF will follow up with a few short, confidential questions. If you prefer, you can simply reply to this email with your perspective on the applicant(s).<br><br>Thank you for your time,<br>The Charlotte Leadership Forum<br>charlotteforum.org",
     "from": "{admin_email}"
+   },
+   "save_email": {
+    "id": "save_email",
+    "isActive": true,
+    "name": "Save and Continue — resume link email",
+    "event": "form_save_email_requested",
+    "toType": "hidden",
+    "to": "",
+    "from": "{admin_email}",
+    "subject": "Your saved CLF application — resume link",
+    "message": "Thank you for starting your Charlotte Leadership Forum application.<br><br>Use the link below to pick up right where you left off. Your progress is saved for 30 days.<br><br>{save_link}<br><br>— The Charlotte Leadership Forum"
+   },
+   "save_confirm": {
+    "id": "save_confirm",
+    "isActive": true,
+    "name": "Save and Continue — link on screen",
+    "event": "form_saved",
+    "toType": "hidden",
+    "to": "",
+    "from": "{admin_email}",
+    "subject": "Your saved CLF application — resume link",
+    "message": "Use the link below to return to your application at any time within 30 days.<br><br>{save_link}<br><br>— The Charlotte Leadership Forum"
    }
   }
  },
