@@ -81,6 +81,7 @@ if ( have_posts() ) {
   .ba-success { padding:65px 0; }.ba-success h2 { font-size:64px; line-height:.9; letter-spacing:-.08em; margin:28px 0; }.ba-success h2 em { font-family:"Playfair Display"; color:var(--rust); }
   .form-step { display:none; }
   .form-step.active { display:block; }
+  @media(min-width:1500px){ .ba-hero h1{font-size:clamp(65px,10vw,190px);max-width:60vw} }
   @media(max-width:720px){ .ba-hero:after{display:none}.ba-hero{padding:65px 22px 68px}.ba-hero h1{font-size:75px}.ba-layout{display:block;padding:62px 22px}.ba-sidebar{position:static;margin-bottom:55px}.ba-stepnav{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.ba-step{display:block;padding:10px 0;border-bottom:2px solid #c8bdab}.ba-step.active{border-color:var(--rust)}.ba-stepnum{margin-bottom:8px}.ba-steplabel{font-size:10px;line-height:1.2}.ba-savenote{max-width:310px}.ba-row{grid-template-columns:1fr}.ba-stepheading{font-size:25px}.ba-success h2{font-size:59px} }
 </style>
 

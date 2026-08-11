@@ -81,6 +81,11 @@ $gift_amounts = array( '$50', '$100', '$250', '$500' );
   .clf-impact-cell strong { display: block; color: #d4a492; font: 25px "DM Mono"; margin-bottom: 20px; }
   .clf-impact-cell p { color: #b8bcb7; font-size: 12px; line-height: 1.6; }
   .clf-give-success { color: #e7c5b6; font: 11px "DM Mono"; display: flex; gap: 8px; align-items: center; margin-top: 15px; }
+  @media(min-width:1500px) {
+    .clf-give-hero-inner { max-width: 60vw; }
+    .clf-give-hero h1 { font-size: clamp(62px,9.4vw,180px); max-width: none; }
+    .clf-give-hero p { max-width: 620px; font-size: 19px; }
+  }
   @media(max-width:720px) {
     .clf-give-hero { padding: 140px 22px 80px; }
     .clf-give-hero h1 { font-size: 70px; }

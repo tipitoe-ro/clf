@@ -95,6 +95,12 @@ $exp_numbers = array(
 .clf-experience-page .clf-exp-number strong{font-size:45px;letter-spacing:-.08em;color:#e7dcca}
 .clf-experience-page .clf-exp-number span{display:block;font-size:12px;color:#aeb4b3;margin-top:10px}
 .clf-experience-page .clf-exp-applycopy{max-width:570px}
+@media(min-width:1500px){
+  .clf-experience-page .clf-exp-hero{min-height:820px}
+  .clf-experience-page .clf-exp-heroinner{max-width:58vw}
+  .clf-experience-page .clf-exp-hero h1{font-size:clamp(58px,9vw,180px)}
+  .clf-experience-page .clf-exp-hero p:not(.clf-kicker){max-width:640px;font-size:19px}
+}
 @media(max-width:720px){
   .clf-experience-page .clf-exp-hero{min-height:690px;padding:0 22px 76px}
   .clf-experience-page .clf-exp-hero h1{font-size:68px}

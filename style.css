@@ -3,7 +3,7 @@ Theme Name: CLF — Charlotte Leadership Forum
 Theme URI: https://charlotteforum.org
 Author: Charlotte Leadership Forum
 Description: Custom WordPress theme for the Charlotte Leadership Forum — "Bold Conviction" design. Deep navy, parchment, and rust palette with oversized editorial typography.
-Version: 2.0.2
+Version: 2.0.3
 License: GNU General Public License v2 or later
 Text Domain: clf
 GitHub Theme URI: tipitoe-ro/clf
@@ -163,4 +163,24 @@ Primary Branch: main
 .clf-footer>div{margin:35px 0;flex-wrap:wrap;gap:16px}
 .clf-pagehead{padding:120px 22px 60px}
 .clf-pagebody{padding:60px 22px}
+}
+
+/* ---- Large-screen scaling (wide monitors) ---- */
+@media (min-width:1500px){
+  .clf-nav{height:92px}
+  .clf-mark span{font-size:28px}
+  .clf-mark small{font-size:11px}
+  .clf-navlinks{gap:38px}
+  .clf-navlinks a,.clf-navlinks button{font-size:14px}
+  .clf-navcta,.clf-navlinks a.nav-cta{padding:14px 20px}
+  .clf-kicker,.clf-sectiontag{font-size:13px}
+  .clf-kicker span{margin-left:15px}
+  .clf-hero h1{font-size:clamp(64px,10.5vw,200px)}
+  .clf-heroinner{max-width:58vw}
+  .clf-herobody{font-size:19px;max-width:500px}
+  .clf-button,.clf-applybtn{font-size:13px;padding:17px 22px}
+  .clf-textlink{font-size:13px}
+  .clf-heroside{font-size:11px}
+  .clf-pagehead h1{font-size:clamp(52px,8vw,150px)}
+  .clf-pagehead p{font-size:17px;max-width:520px}
 }
