@@ -42,7 +42,7 @@ $gift_amounts = array( '$50', '$100', '$250', '$500' );
   .clf-give-section { padding: 120px clamp(22px,11vw,170px); border-bottom: 1px solid #c8bdab; }
   .clf-give-two { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(35px,7vw,110px); align-items: start; }
   .clf-give-label { font: 11px "DM Mono"; letter-spacing: .13em; text-transform: uppercase; color: var(--rust); }
-  .clf-give-label em { display: block; color: #77756d; font: italic 15px "Playfair Display"; letter-spacing: 0; margin-top: 12px; }
+  .clf-give-label em { display: block; color: #4a5058; font: 700 21px/1.3 Manrope,sans-serif; font-style: normal; letter-spacing: -.02em; margin-top: 12px; }
   .clf-give-card { background: #f4f0e8; border: 1px solid #c8bdab; }
   .clf-give-card-head { padding: 27px 30px 24px; border-bottom: 1px solid #c8bdab; }
   .clf-give-card-head h2 { font-size: 25px; letter-spacing: -.04em; margin: 0 0 9px; }
