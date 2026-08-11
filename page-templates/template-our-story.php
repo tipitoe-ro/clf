@@ -10,7 +10,7 @@ if ( have_posts() ) { the_post(); }
 
 <style>
   .clf-story .story-hero{min-height:680px;height:78svh;max-height:820px;position:relative;background:#18283a;color:#f4efe6;display:flex;align-items:end}
-  .clf-story .story-hero:before{content:"";position:absolute;inset:0;background:url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/clf-hero.jpg') center 42%/cover no-repeat;opacity:.32;filter:saturate(.65)}
+  .clf-story .story-hero:before{content:"";position:absolute;inset:0;background:url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/clf-hero-story.jpg') center 42%/cover no-repeat;opacity:.32;filter:saturate(.65)}
   .clf-story .story-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,28,42,.98) 4%,rgba(15,28,42,.72) 58%,rgba(15,28,42,.3))}
   .story-hero-inner{position:relative;z-index:1;margin:0 clamp(22px,11vw,170px) 86px;max-width:850px}
   .story-hero h1{font-size:clamp(58px,9vw,134px);line-height:.88;letter-spacing:-.085em;margin:27px 0 28px}

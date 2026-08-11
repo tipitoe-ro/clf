@@ -20,7 +20,7 @@ $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011'
 
 <style>
 .clf-alumnihero{min-height:690px;height:82svh;max-height:820px;position:relative;background:#1b2a3b;color:#f4efe6;display:flex;align-items:center}
-.clf-alumnihero-art{position:absolute;inset:0;background:url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/clf-hero.jpg') 68% center/cover no-repeat;opacity:.52;filter:saturate(.7)}
+.clf-alumnihero-art{position:absolute;inset:0;background:url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/clf-hero-alumni.jpg') 68% center/cover no-repeat;opacity:.52;filter:saturate(.7)}
 .clf-alumnihero-inner{position:relative;margin-left:clamp(22px,11vw,170px);max-width:760px;padding-top:75px}
 .clf-alumnihero h1{font-size:clamp(55px,8.5vw,128px);line-height:.88;letter-spacing:-.075em;margin:29px 0 32px;font-weight:700}
 .clf-alumnihero h1 em,.clf-alumni-section h2 em,.clf-directory h2 em,.clf-apply h2 em{font-family:"Playfair Display",serif;font-weight:600;letter-spacing:-.06em;color:#d6a18f}
