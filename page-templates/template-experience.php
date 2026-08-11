@@ -56,7 +56,7 @@ $exp_numbers = array(
 ?>
 
 <style>
-.clf-experience-page .clf-exp-hero{min-height:690px;background:var(--ink);color:#f4efe6;position:relative;display:flex;align-items:flex-end;padding:0 clamp(22px,11vw,170px) 88px;overflow:hidden}
+.clf-experience-page .clf-exp-hero{min-height:690px;background:var(--ink);color:#f4efe6;position:relative;display:flex;align-items:flex-end;padding:150px clamp(22px,11vw,170px) 88px;overflow:hidden}
 .clf-experience-page .clf-exp-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,28,42,.98),rgba(15,28,42,.72) 55%,rgba(15,28,42,.2));pointer-events:none}
 .clf-experience-page .clf-exp-heroart{position:absolute;inset:0;background:url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/clf-hero.jpg') center/cover no-repeat;opacity:.24;filter:saturate(.65)}
 .clf-experience-page .clf-exp-heroinner{position:relative;z-index:1;max-width:820px}

@@ -83,7 +83,16 @@ class CLF_Nav_Walker extends Walker_Nav_Menu {
 		}
 
 		$title = apply_filters( 'the_title', $item->title, $item->ID );
-		$output .= '<a' . $attributes . '>' . esc_html( $title ) . '</a>';
+
+		// CTA items get the arrow icon, matching the design
+		$icon = '';
+		if ( $is_cta && function_exists( 'clf_icon' ) ) {
+			ob_start();
+			clf_icon( 'arrow-up-right', 15 );
+			$icon = ' ' . ob_get_clean();
+		}
+
+		$output .= '<a' . $attributes . '>' . esc_html( $title ) . $icon . '</a>';
 	}
 
 	// Suppress <li> wrappers — we render links directly in a flex div
