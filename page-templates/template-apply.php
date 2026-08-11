@@ -16,6 +16,12 @@ get_header();
 if ( have_posts() ) {
 	the_post();
 }
+
+/* Gravity Forms integration: set the form ID under Appearance → Customize →
+   CLF Content → Contact & Footer → "Gravity Forms — Application Form ID".
+   When set (and GF is active), the GF form renders instead of the static mockup. */
+$clf_gf_id  = (int) clf_get( 'clf_apply_form_id' );
+$clf_use_gf = $clf_gf_id && function_exists( 'gravity_form' );
 ?>
 
 <style>
@@ -85,6 +91,49 @@ if ( have_posts() ) {
   .ba-success { padding:65px 0; }.ba-success h2 { font-size:64px; line-height:.9; letter-spacing:-.08em; margin:28px 0; }.ba-success h2 em { font-family:"Playfair Display"; color:var(--rust); }
   .form-step { display:none; }
   .form-step.active { display:block; }
+  /* ---- Gravity Forms restyle (Bold Conviction) ---- */
+  .ba-form .gform_wrapper.gravity-theme { font-family:Manrope,sans-serif; }
+  .ba-form .gform_wrapper .gform_validation_errors { background:#f3e2dc; border:1px solid var(--rust); border-radius:0; box-shadow:none; padding:16px 18px; margin-bottom:30px; }
+  .ba-form .gform_wrapper .gform_validation_errors > h2 { color:var(--rust); font:12px Manrope,sans-serif; font-weight:700; letter-spacing:.05em; }
+  .ba-form .gform_wrapper .gf_page_steps { border:0; border-top:1px solid #c8bdab; padding:0 0 34px; margin-bottom:14px; display:flex; gap:4px; }
+  .ba-form .gform_wrapper .gf_step { margin:0; padding:12px 14px 0 0; opacity:1; display:flex; align-items:center; gap:9px; }
+  .ba-form .gform_wrapper .gf_step_number { width:24px; height:24px; border:1px solid #b9ab97; border-radius:0; background:transparent; display:grid; place-items:center; font:10px "DM Mono"; color:#72736c; }
+  .ba-form .gform_wrapper .gf_step_active .gf_step_number { color:#f6eee5; background:var(--rust); border-color:var(--rust); }
+  .ba-form .gform_wrapper .gf_step_completed .gf_step_number { background:#d7cab4; color:var(--ink); border-color:#d7cab4; }
+  .ba-form .gform_wrapper .gf_step_completed .gf_step_number:before, .ba-form .gform_wrapper .gf_step_completed .gf_step_number:after { display:none; }
+  .ba-form .gform_wrapper .gf_step_label { font-size:11px; letter-spacing:.04em; color:#72736c; font-family:Manrope,sans-serif; font-weight:600; }
+  .ba-form .gform_wrapper .gf_step_active .gf_step_label { color:var(--ink); }
+  .ba-form .gform_wrapper .gf_progressbar_wrapper { margin-bottom:47px; }
+  .ba-form .gform_wrapper .gf_progressbar { height:2px; background:#d5cabb; border-radius:0; padding:0; }
+  .ba-form .gform_wrapper .gf_progressbar_percentage { height:2px; background:var(--rust); border-radius:0; font-size:0; min-width:0; }
+  .ba-form .gform_wrapper .gf_progressbar_title { font:10px "DM Mono"; letter-spacing:.14em; text-transform:uppercase; color:var(--rust); margin-bottom:10px; }
+  .ba-form .gform_wrapper .gsection { border-bottom:1px solid #c8bdab; padding:0 0 10px; margin:34px 0 5px; }
+  .ba-form .gform_wrapper .gsection .gsection_title { color:var(--rust); font:10px "DM Mono"; letter-spacing:.14em; text-transform:uppercase; }
+  .ba-form .gform_wrapper .gfield_label { color:#5d635e; font-size:12px; font-weight:400; line-height:1.4; font-family:Manrope,sans-serif; letter-spacing:0; }
+  .ba-form .gform_wrapper .gfield_required { color:var(--rust); }
+  .ba-form .gform_wrapper input[type=text], .ba-form .gform_wrapper input[type=email], .ba-form .gform_wrapper input[type=tel], .ba-form .gform_wrapper input[type=number], .ba-form .gform_wrapper select, .ba-form .gform_wrapper textarea { width:100%; border:1px solid #c8bdab; border-radius:0; background:#f3eee5; color:var(--ink); padding:12px 13px; font:13px Manrope,sans-serif; outline:none; transition:border-color .2s, background .2s; }
+  .ba-form .gform_wrapper textarea { min-height:88px; resize:vertical; line-height:1.55; }
+  .ba-form .gform_wrapper input:focus, .ba-form .gform_wrapper textarea:focus, .ba-form .gform_wrapper select:focus { border-color:var(--rust); background:#f7f1e8; box-shadow:none; }
+  .ba-form .gform_wrapper input::placeholder, .ba-form .gform_wrapper textarea::placeholder { color:#aaa59b; }
+  .ba-form .gform_wrapper .gfield_description { color:#77766e; font-size:12px; line-height:1.6; }
+  .ba-form .gform_wrapper .gfield_radio { display:flex; gap:9px; }
+  .ba-form .gform_wrapper .gfield_radio .gchoice { display:flex; }
+  .ba-form .gform_wrapper .gfield_radio label { display:flex; align-items:center; gap:7px; padding:10px 15px; border:1px solid #c8bdab; font-size:12px; color:#5d635e; cursor:pointer; margin:0; max-width:none; }
+  .ba-form .gform_wrapper .gfield_radio .gchoice:has(input:checked) label { border-color:var(--rust); color:var(--ink); background:#e7d9c7; }
+  .ba-form .gform_wrapper .gfield_radio input, .ba-form .gform_wrapper .gfield_checkbox input { accent-color:var(--rust); }
+  .ba-form .gform_wrapper .gfield_radio input { position:static; margin:0; }
+  .ba-form .gform_wrapper .gfield.clf-commitment { background:#e1d4bf; padding:21px 22px; }
+  .ba-form .gform_wrapper .gfield.clf-commitment .gfield_description { color:#5f625c; font-size:15px; line-height:1.7; margin-bottom:16px; padding-top:0; }
+  .ba-form .gform_wrapper .gfield_checkbox label { color:var(--ink); font-size:12px; line-height:1.5; cursor:pointer; max-width:none; }
+  .ba-form .gform_wrapper .gform_page_footer, .ba-form .gform_wrapper .gform_footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #c8bdab; margin-top:43px; padding:23px 0 0; }
+  .ba-form .gform_wrapper .gform_next_button, .ba-form .gform_wrapper .gform_button { background:var(--rust)!important; color:#fff!important; border:0; border-radius:0; padding:14px 17px; font:11px Manrope,sans-serif; font-weight:700; letter-spacing:.09em; text-transform:uppercase; cursor:pointer; margin-left:auto; transition:background .2s, transform .2s; }
+  .ba-form .gform_wrapper .gform_next_button:hover, .ba-form .gform_wrapper .gform_button:hover { background:#c26b55!important; transform:translateY(-2px); }
+  .ba-form .gform_wrapper .gform_previous_button { background:transparent; border:0; color:#69706a!important; padding:14px 17px 14px 0; font:11px Manrope,sans-serif; font-weight:700; letter-spacing:.09em; text-transform:uppercase; cursor:pointer; }
+  .ba-form .gform_wrapper .gform_save_link { color:var(--rust); font-size:11px; letter-spacing:.05em; text-transform:uppercase; font-weight:700; }
+  .ba-form .gform_wrapper .gfield_error input, .ba-form .gform_wrapper .gfield_error textarea { border-color:var(--rust); }
+  .ba-form .gform_wrapper .gfield_error .gfield_label { color:var(--rust); }
+  .ba-form .gform_wrapper .gfield_validation_message, .ba-form .gform_wrapper .validation_message { background:transparent; border:0; color:var(--rust); font-size:11px; padding:6px 0 0; }
+  @media(max-width:720px){ .ba-form .gform_wrapper .gf_page_steps { flex-wrap:wrap; } }
   @media(min-width:1500px){ .ba-hero h1{font-size:clamp(65px,10vw,190px);max-width:60vw} }
   @media(max-width:720px){ .ba-hero:after{display:none}.ba-hero{padding:65px 22px 68px}.ba-hero h1{font-size:75px}.ba-layout{display:block;padding:62px 22px}.ba-sidebar{position:static;margin-bottom:55px}.ba-stepnav{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.ba-step{display:block;padding:10px 0;border-bottom:2px solid #c8bdab}.ba-step.active{border-color:var(--rust)}.ba-stepnum{margin-bottom:8px}.ba-steplabel{font-size:10px;line-height:1.2}.ba-savenote{max-width:310px}.ba-row{grid-template-columns:1fr}.ba-stepheading{font-size:25px}.ba-success h2{font-size:59px} }
 </style>
@@ -101,6 +150,7 @@ if ( have_posts() ) {
 
 <div class="ba-layout">
   <aside class="ba-sidebar clf-reveal">
+    <?php if ( ! $clf_use_gf ) : ?>
     <div class="ba-stepnav" id="stepNav">
       <button type="button" class="ba-step step-item active" onclick="clfGoTo(1)"><span class="ba-stepnum">01</span><span class="ba-steplabel">About you</span></button>
       <button type="button" class="ba-step step-item" onclick="clfGoTo(2)"><span class="ba-stepnum">02</span><span class="ba-steplabel">Your work</span></button>
@@ -108,10 +158,14 @@ if ( have_posts() ) {
       <button type="button" class="ba-step step-item" onclick="clfGoTo(4)"><span class="ba-stepnum">04</span><span class="ba-steplabel">Your goals</span></button>
       <button type="button" class="ba-step step-item" onclick="clfGoTo(5)"><span class="ba-stepnum">05</span><span class="ba-steplabel">References</span></button>
     </div>
-    <div class="ba-savenote"><?php clf_icon( 'save', 14 ); ?> Your progress is saved automatically. We'll email you a link to return at any time.</div>
+    <?php endif; ?>
+    <div class="ba-savenote"><?php clf_icon( 'save', 14 ); ?> <?php echo $clf_use_gf ? 'Use &ldquo;Save and continue later&rdquo; at the bottom of any step and we&rsquo;ll email you a link to pick up where you left off.' : "Your progress is saved automatically. We'll email you a link to return at any time."; ?></div>
   </aside>
 
   <section class="ba-form clf-reveal">
+    <?php if ( $clf_use_gf ) : ?>
+      <?php gravity_form( $clf_gf_id, false, false, false, null, true ); ?>
+    <?php else : ?>
     <div class="ba-progress"><span id="progressFill" style="width:20%;"></span></div>
 
     <!-- STEP 1: About you -->
@@ -406,6 +460,7 @@ if ( have_posts() ) {
       <h2>Almost<br><em>there.</em></h2>
       <p class="ba-stephead">Online submission is coming soon. For now, please email your completed application details to <a href="mailto:<?php echo esc_attr( clf_get( 'clf_contact_email', 'info@charlotteforum.org' ) ); ?>" style="color:var(--rust);"><?php echo esc_html( clf_get( 'clf_contact_email', 'info@charlotteforum.org' ) ); ?></a> and we&rsquo;ll take it from there.</p>
     </div>
+    <?php endif; ?>
   </section>
 </div>
 
