@@ -204,3 +204,17 @@ function clf_remove_admin_bar_style() {
 	remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 add_action( 'get_header', 'clf_remove_admin_bar_style' );
+
+/* ============================================================
+   Favicon — used unless a Site Icon is set in the Customizer
+   ============================================================ */
+function clf_favicon() {
+	if ( has_site_icon() ) {
+		return; // WordPress outputs the site icon itself
+	}
+	$base = get_template_directory_uri() . '/assets/images';
+	echo '<link rel="icon" type="image/png" sizes="48x48" href="' . esc_url( $base . '/favicon-48.png' ) . '">' . "\n";
+	echo '<link rel="icon" type="image/png" sizes="512x512" href="' . esc_url( $base . '/favicon-512.png' ) . '">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $base . '/favicon-512.png' ) . '">' . "\n";
+}
+add_action( 'wp_head', 'clf_favicon', 1 );
