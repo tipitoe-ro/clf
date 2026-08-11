@@ -20,6 +20,10 @@ if ( have_posts() ) {
 
 <style>
   .ba-page { min-height:100vh; background:var(--paper); color:var(--ink); }
+  .ba-page .clf-nav { position:relative; color:var(--ink); background:var(--paper); border-color:#d6cebf; }
+  .ba-page .clf-navlinks a, .ba-page .clf-navlinks button { color:#59616a; }
+  .ba-page .clf-navlinks a:hover, .ba-page .clf-navlinks button:hover { color:var(--rust); }
+  .ba-page .clf-navcta, .ba-page .clf-navlinks a.nav-cta { color:var(--ink); border-color:var(--ink)!important; }
   .ba-hero { background:var(--ink); color:#eee9df; padding:clamp(68px,10vw,126px) clamp(22px,11vw,170px) clamp(60px,8vw,100px); position:relative; overflow:hidden; }
   .ba-hero:after { content:"APPLICATIONS / 2025"; position:absolute; right:clamp(22px,6vw,90px); top:50%; writing-mode:vertical-rl; transform:rotate(180deg); font:10px "DM Mono"; letter-spacing:.18em; color:#aaa9a1; }
   .ba-kicker { color:#d4a492; font:11px "DM Mono"; letter-spacing:.13em; text-transform:uppercase; }
