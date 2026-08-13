@@ -3,7 +3,7 @@ Theme Name: CLF — Charlotte Leadership Forum
 Theme URI: https://app.global
 Author: Always About People
 Description: Custom WordPress theme for the Charlotte Leadership Forum — "Bold Conviction" design. Deep navy, parchment, and rust palette with oversized editorial typography.
-Version: 2.3.0
+Version: 2.3.1
 License: GNU General Public License v2 or later
 Text Domain: clf
 GitHub Theme URI: tipitoe-ro/clf
@@ -26,7 +26,7 @@ Primary Branch: main
 .clf-nav{height:76px;padding:0 clamp(22px,5vw,76px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d6cebf;position:absolute;z-index:5;width:100%;color:#efe9de}
 .clf-mark{display:flex;align-items:center;gap:11px;color:inherit!important}
 .clf-mark span{font-size:22px;font-weight:800;letter-spacing:-.08em}
-.clf-mark svg.clf-logo{height:34px;width:auto;display:block;flex:none}
+.clf-mark svg.clf-logo{height:34px;width:34px;display:block;flex:none}
 .clf-mark small{font:9px "DM Mono";letter-spacing:.1em;opacity:.72;white-space:nowrap}
 .clf-navlinks{display:flex;align-items:center;gap:30px}
 .clf-navlinks a,.clf-navlinks button{font-size:12px;color:#dfd9cd}
@@ -170,7 +170,7 @@ Primary Branch: main
 @media (min-width:1500px){
   .clf-nav{height:92px}
   .clf-mark span{font-size:28px}
-  .clf-mark svg.clf-logo{height:42px}
+  .clf-mark svg.clf-logo{height:42px;width:42px}
   .clf-mark small{font-size:11px}
   .clf-navlinks{gap:38px}
   .clf-navlinks a,.clf-navlinks button{font-size:14px}

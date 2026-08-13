@@ -178,7 +178,7 @@ function clf_logo() {
 	}
 	$svg = preg_replace( '/^.*?<svg/s', '<svg', $svg );          // strip XML prolog/doctype
 	$svg = str_replace( 'fill="#01357E"', 'fill="currentColor"', $svg );
-	$svg = str_replace( '<svg ', '<svg class="clf-logo" height="34" aria-hidden="true" focusable="false" ', $svg );
+	$svg = str_replace( '<svg ', '<svg class="clf-logo" width="34" height="34" aria-hidden="true" focusable="false" ', $svg );
 	echo $svg; // phpcs:ignore WordPress.Security.EscapeOutput -- static theme asset
 }
 
