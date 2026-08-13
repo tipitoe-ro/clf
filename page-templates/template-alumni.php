@@ -15,6 +15,7 @@ $hero_sub      = has_excerpt()
 	? get_the_excerpt()
 	: 'Since 1995, CLF has walked alongside nearly 400 couples across 15 classes. Our alumni are leading in their families, churches, workplaces, and communities — and the network only grows stronger.';
 
+$portal_url = clf_get( 'clf_portal_login_url', '/alumni-login/' );
 $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011', '2009', '2007', '2005', '2003', '2001', '1999', '1997' );
 ?>
 
@@ -93,7 +94,7 @@ $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011'
     <p>Every CLF class since 1997 &mdash; one cohort every two years. Full alumni profiles and a searchable directory are available in the alumni portal.</p>
     <div class="clf-class-list">
       <?php foreach ( $classes as $year ) : ?>
-        <button type="button" onclick="clfNotifyInterest()"><span>Class of <?php echo esc_html( $year ); ?></span><small>~25 couples</small><?php clf_icon( 'chevron-right', 16 ); ?></button>
+        <button type="button" onclick="window.location.href='<?php echo esc_js( esc_url( $portal_url ) ); ?>'"><span>Class of <?php echo esc_html( $year ); ?></span><small>~25 couples</small><?php clf_icon( 'chevron-right', 16 ); ?></button>
       <?php endforeach; ?>
     </div>
   </div>
@@ -103,9 +104,9 @@ $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011'
   <div class="clf-sectiontag">03 / Alumni portal</div>
   <div class="clf-portal-band">
     <div>
-      <div class="clf-coming"><?php clf_icon( 'clock', 13 ); ?> Coming soon</div>
+      <div class="clf-coming"><?php clf_icon( 'clock', 13 ); ?> Now live</div>
       <h2>Your home base<br>as a CLF alumnus.</h2>
-      <p>We're building a private space for CLF alumni to connect, find their cohort, stay informed on events, and engage with the broader network.</p>
+      <p>A private space for CLF alumni to connect, find their cohort, stay informed on events, and engage with the broader network.</p>
       <div class="clf-features">
         <div><?php clf_icon( 'search', 16 ); ?> Search alumni by name or class year</div>
         <div><?php clf_icon( 'users', 16 ); ?> Find and reconnect with your cohort</div>
@@ -115,10 +116,9 @@ $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011'
       </div>
     </div>
     <div class="clf-portal-actions">
-      <p>Are you a CLF alumnus? Let us know you're interested and we'll reach out when the portal launches.</p>
-      <a class="clf-button" id="clfNotifyBtn" href="mailto:<?php echo esc_attr( $contact_email ); ?>?subject=Alumni Portal Interest" onclick="clfNotifyInterest()"><?php clf_icon( 'mail', 17 ); ?> <span>Notify me when it launches</span></a>
-      <button type="button" class="clf-portal-login" onclick="window.alert('The alumni portal is coming soon. Contact us if you need help logging in.')"><?php clf_icon( 'lock', 16 ); ?> Log in to portal</button>
-      <small>Already have an account? Contact us if you need help logging in.</small>
+      <p>Are you a CLF alumnus? Sign in to update your profile, browse the directory, and RSVP to alumni events.</p>
+      <a class="clf-button" href="<?php echo esc_url( $portal_url ); ?>"><?php clf_icon( 'lock', 17 ); ?> <span>Log in to the portal</span></a>
+      <small>Trouble signing in? Email <a href="mailto:<?php echo esc_attr( $contact_email ); ?>?subject=Alumni Portal Login Help" style="color:inherit"><?php echo esc_html( $contact_email ); ?></a> and we&rsquo;ll help you get access.</small>
     </div>
   </div>
 </section>
@@ -131,20 +131,5 @@ $classes = array( '2025', '2023', '2021', '2019', '2017', '2015', '2013', '2011'
   </div>
   <a class="clf-applybtn" href="<?php echo esc_url( clf_page_url( 'apply' ) ); ?>">Share CLF <?php clf_icon( 'arrow-up-right', 21 ); ?></a>
 </section>
-
-<script>
-(function () {
-  window.clfNotifyInterest = function () {
-    var btn = document.getElementById('clfNotifyBtn');
-    if (!btn) return;
-    var label = btn.querySelector('span');
-    if (label) label.textContent = 'Interest noted';
-    var svg = btn.querySelector('svg');
-    if (svg) {
-      svg.outerHTML = '<svg class="clf-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
-    }
-  };
-})();
-</script>
 
 <?php get_footer(); ?>

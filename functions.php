@@ -122,6 +122,7 @@ function clf_customizer_settings( $wp_customize ) {
 	clf_add_text_setting( $wp_customize, 'clf_paypal_url', 'clf_contact', __( 'PayPal Donate URL', 'clf' ), 'https://www.paypal.com/donate/?business=NM2PEQDVYDWFW&no_recurring=0&currency_code=USD' );
 	clf_add_text_setting( $wp_customize, 'clf_mailing_address', 'clf_contact', __( 'Mailing Address (HTML allowed)', 'clf' ), "Attention: Treasurer<br>CLF<br>4609 Crownvista Drive<br>Charlotte, NC 28269" );
 	clf_add_text_setting( $wp_customize, 'clf_apply_form_id', 'clf_contact', __( 'Gravity Forms — Application Form ID', 'clf' ), '' );
+clf_add_text_setting( $wp_customize, 'clf_portal_login_url', 'clf_contact', __( 'Alumni Portal Login URL', 'clf' ), '/alumni-login/' );
 
 	/* ---- Section: Home Hero ---- */
 	$wp_customize->add_section( 'clf_home', array(
