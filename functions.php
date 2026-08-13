@@ -30,7 +30,7 @@ function clf_enqueue_assets() {
 	wp_enqueue_style( 'clf-fonts', 'https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap', array(), null );
 
 	// Main stylesheet
-	wp_enqueue_style( 'clf-style', get_stylesheet_uri(), array( 'clf-fonts' ), '2.0.0' );
+	wp_enqueue_style( 'clf-style', get_stylesheet_uri(), array( 'clf-fonts' ), wp_get_theme()->get( 'Version' ) );
 
 	// Main JS (scroll reveals, mobile nav, apply form steps, give page interactions)
 	wp_enqueue_script( 'clf-main', get_template_directory_uri() . '/assets/js/clf-main.js', array(), '2.0.0', true );
@@ -177,7 +177,7 @@ function clf_logo() {
 	}
 	$svg = preg_replace( '/^.*?<svg/s', '<svg', $svg );          // strip XML prolog/doctype
 	$svg = str_replace( 'fill="#01357E"', 'fill="currentColor"', $svg );
-	$svg = str_replace( '<svg ', '<svg class="clf-logo" aria-hidden="true" focusable="false" ', $svg );
+	$svg = str_replace( '<svg ', '<svg class="clf-logo" height="34" aria-hidden="true" focusable="false" ', $svg );
 	echo $svg; // phpcs:ignore WordPress.Security.EscapeOutput -- static theme asset
 }
 
