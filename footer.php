@@ -1,6 +1,6 @@
 <footer class="clf-footer">
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="clf-mark">
-    <span>CLF</span><small><?php echo esc_html( strtoupper( get_bloginfo( 'name' ) ?: 'Charlotte Leadership Forum' ) ); ?></small>
+    <?php clf_logo(); ?><small><?php echo esc_html( strtoupper( get_bloginfo( 'name' ) ?: 'Charlotte Leadership Forum' ) ); ?></small>
   </a>
   <div>
     <?php

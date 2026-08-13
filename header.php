@@ -21,7 +21,7 @@ $clf_page_class = isset( $GLOBALS['clf_page_class'] ) ? $GLOBALS['clf_page_class
 
 <nav class="clf-nav">
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="clf-mark">
-    <span>CLF</span><small><?php echo esc_html( strtoupper( get_bloginfo( 'name' ) ?: 'Charlotte Leadership Forum' ) ); ?></small>
+    <?php clf_logo(); ?><small><?php echo esc_html( strtoupper( get_bloginfo( 'name' ) ?: 'Charlotte Leadership Forum' ) ); ?></small>
   </a>
 
   <div class="clf-navlinks" id="clfNavLinks">

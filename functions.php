@@ -166,6 +166,22 @@ function clf_get( $key, $fallback = '' ) {
 }
 
 /* ============================================================
+   Helper: Inline CLF logo (SVG, inherits currentColor)
+   ============================================================ */
+function clf_logo() {
+	$file = get_template_directory() . '/assets/images/clf-logo.svg';
+	$svg  = file_exists( $file ) ? file_get_contents( $file ) : '';
+	if ( ! $svg ) {
+		echo '<span>CLF</span>';
+		return;
+	}
+	$svg = preg_replace( '/^.*?<svg/s', '<svg', $svg );          // strip XML prolog/doctype
+	$svg = str_replace( 'fill="#01357E"', 'fill="currentColor"', $svg );
+	$svg = str_replace( '<svg ', '<svg class="clf-logo" aria-hidden="true" focusable="false" ', $svg );
+	echo $svg; // phpcs:ignore WordPress.Security.EscapeOutput -- static theme asset
+}
+
+/* ============================================================
    Helper: Inline SVG icons (replaces icon-font dependency)
    ============================================================ */
 function clf_icon( $name, $size = 16 ) {
